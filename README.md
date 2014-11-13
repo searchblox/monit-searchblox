@@ -1,9 +1,9 @@
 monit-searchblox
 ================
 
-Monit script (installation and configuration) for monitoring SearchBlox Server
+Bash script for installation and configuration of monit for monitoring SearchBlox Server
 
-#usage#
+#script usage#
 
 Usage: searchblox_monit.sh -e email [ -v ]
 
@@ -11,4 +11,4 @@ Usage: searchblox_monit.sh -e email [ -v ]
 -e) email address to send monit alerts to
 -v) be more verbose (includes debug output)
 
-This script installes monit on a CentOS system, configures and installs it.
+This script installes monit on a CentOS system, does the configuration and starts it up
