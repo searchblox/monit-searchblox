@@ -3,6 +3,30 @@
 
 Bash script for installation and configuration of monit for monitoring SearchBlox Server
 
+__What it does__
+
+- install monit (and the needed EPEL repository)
+- configuring monit to:
+	- check every 2 Minutes
+	- log to syslog
+	- send mails through local installed mailserver
+	- send alerts to the address given as option
+	- check load (alert if the 5 Mins average is above the number of cpus)
+	- alert if memory usage is more than 85%
+	- check process searchblox and restart if not running
+	- alert if searchblox uses more than 75% cpu
+	- alert if memory usage of searchblox exceeds 75%
+	- restart searchblox if there is no string "Basic Search" as result to query http://ocalhost/searchblox/search.jsp
+	- alert if disk where searchblox is installed on (/opt/searchblox) has less than 25% free
+- start monit
+
+It also adds some other config values you can easily uncomment and enable/adjust.
+
+##prerequisites##
+
+- searchblox is installed, already (into /opt/searchblox)
+
+
 ##"installing" the script##
 
 Download the script (searchblox_monit.sh) and move/copy it to your server. 
