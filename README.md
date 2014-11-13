@@ -16,7 +16,7 @@ __What it does__
 	- check process searchblox and restart if not running
 	- alert if searchblox uses more than 75% cpu
 	- alert if memory usage of searchblox exceeds 75%
-	- restart searchblox if there is no string "Basic Search" as result to query http://ocalhost/searchblox/search.jsp
+	- restart searchblox if there is no string "Basic Search" as result to query http://localhost/searchblox/search.jsp
 	- alert if disk where searchblox is installed on (/opt/searchblox) has less than 25% free
 - start monit
 
