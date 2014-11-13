@@ -3,7 +3,7 @@ monit-searchblox
 
 Monit script (installation and configuration) for monitoring SearchBlox Server
 
-- usage
+#usage#
 
 Usage: searchblox_monit.sh -e email [ -v ]
 
