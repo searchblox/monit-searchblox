@@ -50,9 +50,9 @@ This will install monit, configure it and start monitoring your searchblox insta
 
 ##script usage##
 
-'''Usage: searchblox_monit.sh -e email [ -v ]
+```Usage: searchblox_monit.sh -e email [ -v ]
 
 -h) displays this help
 -e) email address to send monit alerts to
 -v) be more verbose (includes debug output)
-'''
+```
