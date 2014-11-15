@@ -2,7 +2,7 @@
 ================
 
 Bash script for installation and configuration of monit for monitoring SearchBlox Server.
-Runable on Ubuntu, debian, CentOS, and RedHat (version 5 and 6)
+Runnable on Ubuntu, debian, CentOS, and RedHat (version 5 and 6)
 
 __What it does__
 
