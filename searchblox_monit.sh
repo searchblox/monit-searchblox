@@ -109,19 +109,19 @@ function error {
 function f_guess_os {
 	os_family="unknown"
 	debug "trying to find out which OS you are using"
-	if grep -i centos /etc/issue &>/dev/null
+	if grep -i centos /etc/*release &>/dev/null
 	then
 		debug "seams you are using CentOS"
 		os_family="redhat"
-		if grep "7." /etc/issue &>/dev/null
+		if grep "7." /etc/*release &>/dev/null
 		then
 			error "not sure if CentOS 7 is supported, already, trying anyway"
 		fi
-	elif grep -i redhat /etc/issue
+	elif grep -i redhat /etc/*release
 	then
 		debug "looks like you are running on RedHat"
 		os_family="redhat"
-		if grep "7." /etc/issue &>/dev/null
+		if grep "7." /etc/*release &>/dev/null
 		then
 			error "not sure if RedHat 7 is supported, already, trying anyway"
 		fi
