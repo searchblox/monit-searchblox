@@ -21,6 +21,7 @@ log_out_err="STDERR"
 confdir_debian="/etc/monit/conf.d/"
 conffile_debian="/etc/monit/monitrc"
 confdir_redhat="/etc/monit.d"
+conffile_redhat2="/etc/monitrc"
 conffile_redhat="/etc/monit.conf"
 
 function usage {
@@ -187,7 +188,8 @@ function f_configure {
 #conffile_debian="/etc/monit/monitrc"
 #confdir_redhat="/etc/monit.d"
 #conffile_redhat="/etc/monit.conf"
-	local cf="conffile_$os_family"
+  local cf="conffile_$os_family"
+	local cf2="conffile_${os_family}2"
 	local cd="confdir_$os_family"
 	debug "getting system info"
 	f_get_system_info
@@ -230,6 +232,13 @@ EOF_SB_MONIT_CONF
 		debug "deleting logging file from /etc/monit.d/ which came with install"
 		rm -f /etc/monit.d/logging
 	fi
+  # copy config file to secondary location if it exists; 
+  # e.g. CentOS 7 location is /etc/monitrc
+  if [ ! -z "${!cf2}" ]
+  then
+    [ -f ${!cf2} ] && cp ${!cf} ${!cf2}
+    chmod 700 ${!cf2}
+  fi
 	debug "finished"
 }
 
