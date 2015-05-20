@@ -188,7 +188,7 @@ function f_configure {
 #conffile_debian="/etc/monit/monitrc"
 #confdir_redhat="/etc/monit.d"
 #conffile_redhat="/etc/monit.conf"
-  local cf="conffile_$os_family"
+	local cf="conffile_$os_family"
 	local cf2="conffile_${os_family}2"
 	local cd="confdir_$os_family"
 	debug "getting system info"
