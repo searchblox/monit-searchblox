@@ -118,7 +118,7 @@ function f_guess_os {
 		then
 			error "not sure if CentOS 7 is supported, already, trying anyway"
 		fi
-	elif grep -i redhat /etc/*release
+	elif grep -i 'redhat\|rhel' /etc/*release
 	then
 		debug "looks like you are running on RedHat"
 		os_family="redhat"
