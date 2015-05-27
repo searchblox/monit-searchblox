@@ -118,7 +118,7 @@ function f_guess_os {
 		then
 			error "not sure if CentOS 7 is supported, already, trying anyway"
 		fi
-	elif grep -i redhat /etc/*release
+	elif grep -i 'redhat\|rhel' /etc/*release
 	then
 		debug "looks like you are running on RedHat"
 		os_family="redhat"
@@ -236,8 +236,7 @@ EOF_SB_MONIT_CONF
   # e.g. CentOS 7 location is /etc/monitrc
   if [ ! -z "${!cf2}" ]
   then
-    [ -f ${!cf2} ] && cp ${!cf} ${!cf2}
-    chmod 700 ${!cf2}
+    [ -f ${!cf2} ] && cp ${!cf} ${!cf2} && chmod 700 ${!cf2}
   fi
 	debug "finished"
 }
